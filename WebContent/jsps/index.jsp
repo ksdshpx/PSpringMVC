@@ -18,5 +18,7 @@
 	</form>
 	<br/>
 	<a href="<c:url value='/springmvc/testRequestMappingParamsAndHeaders?username=tom&age=25'/>">Test RequestMapping ParamsAndHeaders</a>
+	<br/>
+	<a href="<c:url value='/springmvc/testPathVariable/Admin/1001'/>">Test PathVariable</a>
 </body>
 </html>
