@@ -16,5 +16,7 @@
 	<form action="<c:url value='/springmvc/testRequestMappingMethod'/>">
 		<input type="submit" value="提交"/>
 	</form>
+	<br/>
+	<a href="<c:url value='/springmvc/testRequestMappingParamsAndHeaders?username=tom&age=25'/>">Test RequestMapping ParamsAndHeaders</a>
 </body>
 </html>

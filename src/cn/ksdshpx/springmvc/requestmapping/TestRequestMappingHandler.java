@@ -16,8 +16,23 @@ public class TestRequestMappingHandler {
 		return "success";
 	}
 
+	/**
+	 * 映射请求方式
+	 * 
+	 * @return
+	 */
 	@RequestMapping(value = "/testRequestMappingMethod", method = { RequestMethod.POST, RequestMethod.GET })
 	public String requestMappingMethod() {
+		return "success";
+	}
+
+	/**
+	 * 映射请求参数和请求头
+	 * @return
+	 */
+	@RequestMapping(value = "/testRequestMappingParamsAndHeaders", params = { "username", "age=25" }, headers = {
+			"Accept-Language" })
+	public String requestMappingParamsAndHeaders() {
 		return "success";
 	}
 }
