@@ -2,6 +2,7 @@ package cn.ksdshpx.springmvc.requestmapping;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author peng.x
@@ -12,6 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TestRequestMappingHandler {
 	@RequestMapping("/testRequestMapping")
 	public String requestMapping() {
+		return "success";
+	}
+
+	@RequestMapping(value = "/testRequestMappingMethod", method = { RequestMethod.POST, RequestMethod.GET })
+	public String requestMappingMethod() {
 		return "success";
 	}
 }

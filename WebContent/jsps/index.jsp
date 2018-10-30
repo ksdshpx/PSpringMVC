@@ -11,5 +11,10 @@
 	<a href="<c:url value='/hello'/>">Hello SpringMVC</a>
 	<br/>
 	<a href="<c:url value='/springmvc/testRequestMapping'/>">Test RequestMapping</a>
+	<br/>
+	<a href="<c:url value='/springmvc/testRequestMappingMethod'/>">Test RequestMapping Method</a>
+	<form action="<c:url value='/springmvc/testRequestMappingMethod'/>">
+		<input type="submit" value="提交"/>
+	</form>
 </body>
 </html>
