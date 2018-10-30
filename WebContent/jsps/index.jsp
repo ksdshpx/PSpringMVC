@@ -9,5 +9,7 @@
 </head>
 <body>
 	<a href="<c:url value='/hello'/>">Hello SpringMVC</a>
+	<br/>
+	<a href="<c:url value='/springmvc/testRequestMapping'/>">Test RequestMapping</a>
 </body>
 </html>
