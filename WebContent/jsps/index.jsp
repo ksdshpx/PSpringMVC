@@ -20,5 +20,22 @@
 	<a href="<c:url value='/springmvc/testRequestMappingParamsAndHeaders?username=tom&age=25'/>">Test RequestMapping ParamsAndHeaders</a>
 	<br/>
 	<a href="<c:url value='/springmvc/testPathVariable/Admin/1001'/>">Test PathVariable</a>
+	<br/>
+	<!-- 查询订单编号为1001的订单 -->
+	<a href="<c:url value='/order/1001'/>">REST GET</a>
+	<!-- 删除订单编号为1001的订单 -->
+	<form action="<c:url value='/order/1001'/>" method="post">
+		<input type="hidden" name="_method" value="DELETE"/>
+		<input type="submit" value="REST DELETE"/>
+	</form>
+	<!-- 更新订单 -->
+	<form action="<c:url value='/order'/>" method="post">
+		<input type="hidden" name="_method" value="PUT"/>
+		<input type="submit" value="REST PUT"/>
+	</form>
+	<!-- 新增订单 -->
+	<form action="<c:url value='/order'/>" method="post">
+		<input type="submit" value="REST POST"/>
+	</form>
 </body>
 </html>
