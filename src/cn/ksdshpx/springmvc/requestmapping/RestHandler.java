@@ -1,5 +1,10 @@
 package cn.ksdshpx.springmvc.requestmapping;
 
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -84,5 +89,17 @@ public class RestHandler {
 	public String testPojo(User user) {
 		System.out.println("user:" + user);
 		return "success";
+	}
+
+	/**
+	 * 使用原生的Servlet API
+	 * 
+	 * @throws IOException
+	 */
+	@RequestMapping("/testServletAPI")
+	public void testServletAPI(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		System.out.println(request);
+		System.out.println(response);
+		response.getWriter().write("使用原生的ServletAPI");
 	}
 }

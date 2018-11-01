@@ -54,5 +54,7 @@
 		城市：<input type="text" name="address.city"/>
 		<input type="submit" value="Test Pojo"/>
 	</form>
+	<br/>
+	<a href="<c:url value='/testServletAPI'/>">Test ServletAPI</a>
 </body>
 </html>
