@@ -41,5 +41,18 @@
 	<a href="<c:url value='/testRequestParam?username=zhangSan&age=88'/>">Test RequestParam</a>
 	<br/>
 	<a href="<c:url value='/testRequestHeader'/>">Test RequestHeader</a>
+	<br/>
+	<a href="<c:url value='/testCookieValue'/>">Test CookieValue</a>
+	<br/>
+	<form action="<c:url value='/testPojo'/>" method="post">
+		用户名：<input type="text" name="username"/><br/>
+		密码：<input type="password" name="password"/><br/>
+		邮箱：<input type="text" name="email"/><br/>
+		性别：男<input type="radio" name="gender" value="1"/>
+			   女<input type="radio" name="gender" value="0"/><br/>
+		省份：<input type="text" name="address.province"/><br/>
+		城市：<input type="text" name="address.city"/>
+		<input type="submit" value="Test Pojo"/>
+	</form>
 </body>
 </html>
