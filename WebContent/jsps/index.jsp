@@ -39,5 +39,7 @@
 	</form>
 	<br/>
 	<a href="<c:url value='/testRequestParam?username=zhangSan&age=88'/>">Test RequestParam</a>
+	<br/>
+	<a href="<c:url value='/testRequestHeader'/>">Test RequestHeader</a>
 </body>
 </html>
