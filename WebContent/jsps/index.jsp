@@ -37,5 +37,7 @@
 	<form action="<c:url value='/order'/>" method="post">
 		<input type="submit" value="REST POST"/>
 	</form>
+	<br/>
+	<a href="<c:url value='/testRequestParam?username=zhangSan&age=88'/>">Test RequestParam</a>
 </body>
 </html>
