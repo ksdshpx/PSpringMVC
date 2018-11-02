@@ -8,7 +8,8 @@
 </head>
 <body>
 	<h1>Success Page.</h1>
-	username:${requestScope.username}
-	password:${requestScope.password}
+	username:${requestScope.username}<br/>
+	password:${requestScope.password}<br/>
+	errorMsg:${requestScope.errorMsg}<br/>
 </body>
 </html>

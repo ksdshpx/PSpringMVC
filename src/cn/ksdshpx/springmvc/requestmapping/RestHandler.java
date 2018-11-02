@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -128,6 +129,18 @@ public class RestHandler {
 	public String testMap(Map<String,Object> map) {
 		System.out.println(map.getClass().getName());
 		map.put("password", "123456");
+		return "success";
+	}
+	
+	/**
+	 * 测试Model
+	 * SpringMVC会把Model中模型数据存放到request域中
+	 * SpringMVC调用请求处理方法后，无论方法返回什么类型，都要将其封装成一个ModelAndView类型
+	 * @return
+	 */
+	@RequestMapping("/testModel")
+	public String testModel(Model model) {
+		model.addAttribute("errorMsg", "用户名或密码错误");
 		return "success";
 	}
 }
