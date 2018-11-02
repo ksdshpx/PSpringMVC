@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import cn.ksdshpx.springmvc.beans.User;
 
@@ -50,8 +51,8 @@ public class RestHandler {
 
 	/**
 	 * @RequestParam 映射请求参数到请求方法的形参中 1.如果请求参数与形参名一致，则可以省略@RequestParam的指定
-	 *               2.@RequestParam注解标注的形参必须要赋值。必须要能从请求对象中获取到对应的请求参数。可以通过required类设置不是必须的
-	 *               3.可以使用defaultValue来指定一个默认值取代null
+	 *               2.@RequestParam注解标注的形参必须要赋值。必须要能从请求对象中获取到对应的请求参数。
+	 *               可以通过required类设置不是必须的 3.可以使用defaultValue来指定一个默认值取代null
 	 *               客户端请求：testRequestParam?username=zhangSan&age=88
 	 */
 	@RequestMapping("/testRequestParam")
@@ -101,5 +102,18 @@ public class RestHandler {
 		System.out.println(request);
 		System.out.println(response);
 		response.getWriter().write("使用原生的ServletAPI");
+	}
+
+	/**
+	 * 测试ModelAndView
+	 * SpringMVC会把ModelAndView中模型数据存放到request域中
+	 * @return
+	 */
+	@RequestMapping("/testModelAndView")
+	public ModelAndView testModelAndView() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("username", "admin");
+		mav.setViewName("success");
+		return mav;
 	}
 }

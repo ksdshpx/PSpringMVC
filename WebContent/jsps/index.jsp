@@ -56,5 +56,7 @@
 	</form>
 	<br/>
 	<a href="<c:url value='/testServletAPI'/>">Test ServletAPI</a>
+	<br/>
+	<a href="<c:url value='/testModelAndView'/>">Test ModelAndView</a>
 </body>
 </html>
