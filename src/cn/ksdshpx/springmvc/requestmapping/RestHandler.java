@@ -1,6 +1,7 @@
 package cn.ksdshpx.springmvc.requestmapping;
 
 import java.io.IOException;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -105,8 +106,8 @@ public class RestHandler {
 	}
 
 	/**
-	 * 测试ModelAndView
-	 * SpringMVC会把ModelAndView中模型数据存放到request域中
+	 * 测试ModelAndView SpringMVC会把ModelAndView中模型数据存放到request域中
+	 * 
 	 * @return
 	 */
 	@RequestMapping("/testModelAndView")
@@ -115,5 +116,18 @@ public class RestHandler {
 		mav.addObject("username", "admin");
 		mav.setViewName("success");
 		return mav;
+	}
+
+	/**
+	 * 测试Map
+	 * SpringMVC会把Map中模型数据存放到request域中
+	 * SpringMVC调用请求处理方法后，无论方法返回什么类型，都要将其封装成一个ModelAndView类型
+	 * @return
+	 */
+	@RequestMapping("/testMap")
+	public String testMap(Map<String,Object> map) {
+		System.out.println(map.getClass().getName());
+		map.put("password", "123456");
+		return "success";
 	}
 }

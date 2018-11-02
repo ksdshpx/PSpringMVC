@@ -58,5 +58,7 @@
 	<a href="<c:url value='/testServletAPI'/>">Test ServletAPI</a>
 	<br/>
 	<a href="<c:url value='/testModelAndView'/>">Test ModelAndView</a>
+	<br/>
+	<a href="<c:url value='/testMap'/>">Test Map</a>
 </body>
 </html>

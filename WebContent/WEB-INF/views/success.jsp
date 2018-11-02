@@ -9,5 +9,6 @@
 <body>
 	<h1>Success Page.</h1>
 	username:${requestScope.username}
+	password:${requestScope.password}
 </body>
 </html>
