@@ -66,5 +66,7 @@
 	<a href="<c:url value='/testView'/>">Test View</a>
 	<br/>
 	<a href="<c:url value='/testViewController'/>">Test ViewController</a>
+	<br/>
+	<a href="<c:url value='/testRedirectView'/>">Test RedirectView</a>
 </body>
 </html>

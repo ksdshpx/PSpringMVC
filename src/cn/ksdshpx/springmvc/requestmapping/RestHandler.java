@@ -152,4 +152,13 @@ public class RestHandler {
 	public String testView() {
 		return "success";
 	}
+	
+	/**
+	 * 测试RedirectView
+	 * @return
+	 */
+	@RequestMapping("/testRedirectView")
+	public String testRedirectView() {
+		return "redirect:/ok.jsp";
+	}
 }
