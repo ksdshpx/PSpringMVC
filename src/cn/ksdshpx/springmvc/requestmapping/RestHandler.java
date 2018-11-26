@@ -127,7 +127,7 @@ public class RestHandler {
 	 */
 	@RequestMapping("/testMap")
 	public String testMap(Map<String,Object> map) {
-		System.out.println(map.getClass().getName());
+		System.out.println(map.getClass().getName());//BindingAwareModelMap
 		map.put("password", "123456");
 		return "success";
 	}
@@ -141,6 +141,15 @@ public class RestHandler {
 	@RequestMapping("/testModel")
 	public String testModel(Model model) {
 		model.addAttribute("errorMsg", "用户名或密码错误");
+		return "success";
+	}
+	
+	/**
+	 * 测试View
+	 * @return
+	 */
+	@RequestMapping("/testView")
+	public String testView() {
 		return "success";
 	}
 }

@@ -62,5 +62,7 @@
 	<a href="<c:url value='/testMap'/>">Test Map</a>
 	<br/>
 	<a href="<c:url value='/testModel'/>">Test Model</a>
+	<br/>
+	<a href="<c:url value='/testView'/>">Test View</a>
 </body>
 </html>
