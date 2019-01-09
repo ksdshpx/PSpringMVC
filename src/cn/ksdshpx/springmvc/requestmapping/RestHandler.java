@@ -1,11 +1,17 @@
 package cn.ksdshpx.springmvc.requestmapping;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Map;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
@@ -160,5 +166,26 @@ public class RestHandler {
 	@RequestMapping("/testRedirectView")
 	public String testRedirectView() {
 		return "redirect:/ok.jsp";
+	}
+	
+
+	/**
+	 * 使用HttpMessageConvert完成下载功能
+	 * 支持@RequestBody @ResponseBody HttpEntity ResponseEntity
+	 * 下载的原理：将服务器端的文件，以流的形式写到客户端
+	 * ResponseEntity:将要下载的文件数据，以及响应信息封装到ResponseEntity对象中，浏览器通过解析
+	 * 	              发送回去的响应数据，就可以进行一个下载操作！
+	 */
+	@RequestMapping(value="/testDownLoad")
+	public ResponseEntity<byte[]> testDownLoad(HttpSession session) throws Exception{
+		ServletContext servletContext = session.getServletContext();
+		InputStream in = servletContext.getResourceAsStream("images/mypic.png");
+		byte[] imgs = new byte[in.available()];
+		in.read(imgs);
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-Disposition", "attachment;filename=abc.png");
+		HttpStatus statusCode = HttpStatus.OK;
+		ResponseEntity<byte[]> responseEntity = new ResponseEntity<byte[]>(imgs, headers, statusCode);
+		return responseEntity;
 	}
 }
