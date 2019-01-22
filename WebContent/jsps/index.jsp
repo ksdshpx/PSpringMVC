@@ -70,5 +70,7 @@
 	<a href="<c:url value='/testRedirectView'/>">Test RedirectView</a>
 	<br/>
 	<a href="<c:url value='/testDownLoad'/>">TestDownLoad</a>
+	<br/>
+	<a href="<c:url value='/testMyView'/>">TestMyView</a>
 </body>
 </html>

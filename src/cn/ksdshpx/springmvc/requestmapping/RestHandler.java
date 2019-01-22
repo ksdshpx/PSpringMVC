@@ -188,4 +188,14 @@ public class RestHandler {
 		ResponseEntity<byte[]> responseEntity = new ResponseEntity<byte[]>(imgs, headers, statusCode);
 		return responseEntity;
 	}
+	
+	/**
+	 * 测试自定义View
+	 * @return
+	 */
+	@RequestMapping("/testMyView")
+	public String testMyView() {
+		System.out.println("testMyView");
+		return "helloView";
+	}
 }

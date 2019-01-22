@@ -17,9 +17,12 @@
 		<property name="prefix" value="/WEB-INF/views/"></property>
 		<property name="suffix" value=".jsp"></property>
 		<!-- 配置视图解析器的优先级，值越小，优先级越高，默认为Integer.MAX_VALUE-->
-		<property name="order" value="1"/>
+		<property name="order" value="1000"/>
 	</bean>
 	
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="100"></property>
+	</bean>
 	<!-- 不经过Handler直接跳转到页面 -->
 	<mvc:view-controller path="testViewController" view-name="success"/>
 	
